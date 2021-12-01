@@ -25,5 +25,35 @@ public class LogInPageFormController {
     public Button btnLogIn;
 
     public void btnLogInOnAction(ActionEvent actionEvent) throws IOException {
+
+        if (txtUserName.getText().equals("Admin")) {
+
+            Stage logStage = (Stage) btnLogIn.getScene().getWindow();
+            logStage.close();
+
+            URL resource = this.getClass().getResource("../view/AdminMainForm.fxml");
+            Parent load = FXMLLoader.load(resource);
+            Scene scene = new Scene(load);
+            Stage stage = new Stage();
+            stage.setTitle("ADMIN MAIN VIEW ");
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setScene(scene);
+            stage.show();
+        } else if (txtUserName.getText().equals("Cashier")) {
+
+            Stage logStage = (Stage) btnLogIn.getScene().getWindow();
+            logStage.close();
+
+            URL resource = this.getClass().getResource("../view/CashierMainForm.fxml");
+            Parent load = FXMLLoader.load(resource);
+            Scene scene = new Scene(load);
+            Stage stage = new Stage();
+            stage.setTitle("CASHIER MAIN VIEW ");
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 }
